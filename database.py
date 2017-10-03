@@ -4,7 +4,7 @@ from sqlalchemy.orm import sessionmaker
 import imp
 pwds = imp.load_source('pwds', '../pwds.py')
 
-url_postgres = 'postgresql://%(user)s:%(pw)s@%(host)s:%(port)s/%(db)s' % pwd.POSTGRES
+url_postgres = 'postgresql://%(user)s:%(pw)s@%(host)s:%(port)s/%(db)s' % pwds.POSTGRES
 
 class Database():
     def __init__(self):
