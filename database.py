@@ -1,16 +1,10 @@
 import sqlalchemy
 from sqlalchemy import Table,Column,String,Text,LargeBinary
 from sqlalchemy.orm import sessionmaker
+import imp
+pwds = imp.load_source('pwds', '../pwds.py')
 
-#Setup the connect parameters to database
-POSTGRES = {
-    'user': 'buzzedinseattle',
-    'pw': 'Amy123',
-    'db': 'buzzedinseattle',
-    'host': 'localhost',
-    'port': '5432',
-}
-url_postgres = 'postgresql://%(user)s:%(pw)s@%(host)s:%(port)s/%(db)s' % POSTGRES
+url_postgres = 'postgresql://%(user)s:%(pw)s@%(host)s:%(port)s/%(db)s' % pwd.POSTGRES
 
 class Database():
     def __init__(self):
